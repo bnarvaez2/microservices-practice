@@ -1,2 +1,7 @@
-server.port=8092
-spring.application.name=bike-service
+spring:
+    application:
+        name: bike-service
+    cloud:
+        config:
+            enabled: true
+            uri: http://localhost:8081
