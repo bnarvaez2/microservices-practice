@@ -8,8 +8,7 @@ spring:
                 git:
                     default-label:  main
                     uri: https://github.com/bnarvaez2/microservices-practice
-                    search-paths:
-                    - config-data
+                    search-paths: config-data
     application:
         name: config-services
 
