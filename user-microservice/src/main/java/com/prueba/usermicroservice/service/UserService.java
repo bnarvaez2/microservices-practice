@@ -63,12 +63,14 @@ public class UserService {
         if(cars.isEmpty()){
             result.put("Cars", "Este usuario no tiene carros.");
         }else{
+            System.out.print("//////////////////////" + cars.size());
             result.put("Cars", cars);
         }
         List<Bike> bikes = bikeFeignClient.getBikes(userId);
         if(bikes.isEmpty()){
             result.put("Bikes", "Este usuario no tiene motos.");
         }else{
+            System.out.print("//////////////////////" + bikes.size());
             result.put("Bikes", bikes);
         }
         return result;
