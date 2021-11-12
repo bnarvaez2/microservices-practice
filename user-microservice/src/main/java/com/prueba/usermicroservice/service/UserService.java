@@ -1,5 +1,6 @@
 package com.prueba.usermicroservice.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -60,17 +61,15 @@ public class UserService {
         }
         result.put("User", user);
         List<Car> cars = carFeignClient.getCars(userId);
-        if(cars.isEmpty()){
+        if(cars == null){
             result.put("Cars", "Este usuario no tiene carros.");
         }else{
-            System.out.print("//////////////////////" + cars.size());
             result.put("Cars", cars);
         }
         List<Bike> bikes = bikeFeignClient.getBikes(userId);
-        if(bikes.isEmpty()){
+        if(bikes == null){
             result.put("Bikes", "Este usuario no tiene motos.");
         }else{
-            System.out.print("//////////////////////" + bikes.size());
             result.put("Bikes", bikes);
         }
         return result;
