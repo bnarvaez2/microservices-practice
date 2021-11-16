@@ -1,6 +1,5 @@
 package com.prueba.usermicroservice.service;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -50,6 +49,14 @@ public class UserService {
         bike.setUserId(userid);
         Bike newBike = bikeFeignClient.save(bike);
         return newBike;
+    }
+
+    public List<Car> getCars(int userId){
+        return carFeignClient.getCars(userId);
+    }
+
+    public List<Bike> getBikes(int userId){
+        return bikeFeignClient.getBikes(userId);
     }
 
     public Map<String, Object> getVehiculesUser(int userId){
